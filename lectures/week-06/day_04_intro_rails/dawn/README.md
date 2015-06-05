@@ -691,7 +691,7 @@ We begin with handling the request from a client for an edit page.
 		<form action="/planes/<%= @plane.id %>" method="post">
 			<input type="text" name="plane[name]" value="<%= @plane.name %>">
 			<input type="text" name="plane[design]" value="<%= @plane.design %>">
-			<textarea name="plane[description]" value="<%= @plane.description %>"></textarea>
+			<textarea name="plane[description]"><%= @plane.description %></textarea>
 			<%= token_tag form_authenticity_token %>
 			
 			<button> Update Plane </button>
