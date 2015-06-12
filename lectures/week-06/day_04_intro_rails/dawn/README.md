@@ -605,8 +605,8 @@ The `#create` method redirects to `#index` (the `/planes` path), but this isn't 
 		...
 		
 		def create
-			plane = params.require(:plane).permit(:name, :design, :description)
-			plane = Plane.create(plane)
+			plane_params = params.require(:plane).permit(:name, :design, :description)
+			plane = Plane.create(plane_params)
 			redirect_to "/planes/#{plane.id}"
 		end
 		
